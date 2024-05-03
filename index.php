@@ -467,7 +467,7 @@ a:hover {
 						<div class="fix1">
 
                             <h1>The Future of Virtual Reality</h1>
-                            <p>The reality we long awaited, now has come</p>	
+                            <p>The reality we long awaited</p>	
                             </div>		 
 					</div>		
 				</div>		
@@ -516,7 +516,7 @@ a:hover {
         <blockquote class="blockquote text-center">
           <p class="mb-0"><i class="fa fa-quote-left"></i> "Virtual reality is the first step in a grand adventure into the landscape of the imagination." 
           </p>
-          <footer class="blockquote-footer">Franko Biocca <cite title="Source Title">genius</cite></footer>
+          <footer class="blockquote-footer">Diell Govori <cite title="Source Title">genius</cite></footer>
           <!-- Client review stars -->
           <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
           <p class="client-review-stars">
