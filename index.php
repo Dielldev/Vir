@@ -581,7 +581,7 @@ a:hover {
 						<div class="col-md-8 col-lg-6">
 								<div class="header">
 										<h3>Featured Product</h3>
-										<h2>Popular Products</h2>
+										<h2>Popular Products of VR</h2>
 								</div>
 						</div>
 				</div>
