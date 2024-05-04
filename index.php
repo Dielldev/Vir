@@ -516,7 +516,7 @@ a:hover {
         <blockquote class="blockquote text-center">
           <p class="mb-0"><i class="fa fa-quote-left"></i> "Virtual reality is the first step in a grand adventure into the landscape of the imagination." 
           </p>
-          <footer class="blockquote-footer">Diell Govori <cite title="Source Title">genius</cite></footer>
+          <footer class="blockquote-footer">Diellor Sinani<cite title="Source Title">genius</cite></footer>
           <!-- Client review stars -->
           <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
           <p class="client-review-stars">
@@ -581,7 +581,7 @@ a:hover {
 						<div class="col-md-8 col-lg-6">
 								<div class="header">
 										<h3>Featured Product</h3>
-										<h2>Popular Products of VR</h2>
+										<h2>Popular Products </h2>
 								</div>
 						</div>
 				</div>
