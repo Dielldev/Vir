@@ -609,7 +609,7 @@ a:hover {
                 <p class="date"><?php echo $row["product_desc"]; ?> </p>
                 <div class="pricing-and-cart">
                     <div class="pricing">
-                        <p class="previous-price">$999</p>
+                        <p class="previous-price">$888</p>
                         <p class="current-price">$<?php echo $row["price"]; ?></p>
                     </div>
                   <a href="payment.php"><i class="fas fa-shopping-cart"></i></a>
