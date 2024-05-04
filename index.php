@@ -532,7 +532,7 @@ a:hover {
         <blockquote class="blockquote text-center">
           <p class="mb-0"><i class="fa fa-quote-left"></i> "Virtual reality will transport you to worlds you've only dreamed of." 
           </p>
-          <footer class="blockquote-footer">Palmer Luckey <cite title="Source Title">genius</cite></footer>
+          <footer class="blockquote-footer">Lirakii <cite title="Source Title">genius</cite></footer>
           <!-- Client review stars -->
           <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
           <p class="client-review-stars">
