@@ -1,395 +1,28 @@
-<?php
-session_start();
-include_once('connection.php');
-
-
+<?php 
+require_once('connection.php');
 
 $sql = 'SELECT * FROM product';
 $all_product = $conn->query($sql);
+
+
+
 ?>
-
-
-
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index2.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vr</title>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-
-
-<style>
-
-
-
-
-.section-products a,
-a:hover {
-    text-decoration: none;
-    color: inherit;
-}
-
-.section-products {
-    padding: 80px 0 54px;
-}
-
-.section-products .header {
-    margin-bottom: 50px;
-}
-
-.section-products .header h3 {
-    font-size: 1rem;
-    color: #fe302f;
-    font-weight: 500;
-}
-
-.section-products .header h2 {
-    font-size: 2.2rem;
-    font-weight: 400;
-    color: #444444; 
-}
-
-:root{
-    font-size: 16px;
-    font-family: "Raleway";
-    --heading-color: hsl(0, 0%, 7%);
-    --date-text-color: hsl(0, 0%, 51%);
-    --previous-price-text-color: hsl(0, 98%, 44%);
-    --current-price-text-color: hsla(0, 0%, 0%, 0.822);
-    --liked-heart-icon-color: hsl(0, 98%, 44%);
-    --heart-icon-color: whitesmoke;
-    --pricing-font-weight: 800;
-    --title-font-weight: 800;
-    --date-font-weight: 550;
-
-    /* Cards colors */
-    --card-main-color : whitesmoke;
-    --card-1-secondary-color: rgb(26, 13, 13);
-    --card-2-secondary-color: rgb(67,53,27);
-    --card-3-secondary-color: rgb(178,180,179);
-    --card-4-secondary-color: rgb(96,109,117);
-}
-
-
-.section-products .container input{
-    display: none;
-}
-
-.section-products .container{
-    max-width: 100em;
-    /* background-color: lightgreen; */
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-content: flex-start;
-    margin: auto;
-    min-height: 30em;
-    padding: 3em 1em 1em 1em;
-    box-sizing: border-box;
-}
-
-/* Card Styling */
-.card-div{
-    width: 20em;
-    min-height: 20em;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    background-color: var(--card-main-color);
-    margin: 0.6em;
-    box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: transform 0.2s ease-in-out;
-}
-
-/* ======== General styling of all cards and heart divs ========== */
-.img-div{
-    width: 100%;
-    height: 8em;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1rem;
-    z-index: 1;
-    border-radius: 0 0 10px 10px;
-}
-
-.img-div img{
-    transform-origin: bottom;
-    transform: translateY(7.5%);
-    transition: transform 0.3s ease-in-out
-}
-
-/* === Styling the like Icon ==== */
-.like-icon-div{
-    padding: 1em 1em 0 1em;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: right;
-    font-size: 1.5em;
-    color: var(--heart-icon-color);
-    border-radius:10px 10px 0 0;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.like-icon-div-child{
-    /* background-color: yellow; */
-    width: 1em;
-    height: 1em;
-    position: relative;
-    z-index: 3;
-    cursor: pointer;
-}
-
-.heart-empty{
-    position: absolute;
-    left: 0;
-    opacity: 1;
-}
-
-.heart-fill{
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    transform: scale(0);
-    transition: transform 0.25s ease-in-out, opacity 0.2s ease-in-out;
-}
-
-
-/* God of war image and heart-background*/
-.gow-img-div{
-    background-color: var(--card-1-secondary-color);
-}
-
-.gow-img-div img{
-    width: 65%;
-    transform: translateY(7.5%);
-    /* background-color: whitesmoke; */
-}
-
-.card-1 .like-icon-div{
-    background-color: var(--card-1-secondary-color);
-}
-
-
-/* Sekiro image and heart-background */
-.sekiro-img-div{
-    background-color: var(--card-2-secondary-color);
-}
-
-.sekiro-img-div img{
-    width: 45%;
-    transform: translateY(7.5%);
-}
-
-.card-2 .like-icon-div{
-    background-color: var(--card-2-secondary-color);
-}
-
-
-/* Dazai image and heart-background */
-.dazai-img-div{
-    background-color: var(--card-3-secondary-color);
-}
-
-.dazai-img-div img{
-    width: 80%;
-    transform: translateY(7.5%);
-}
-
-.card-3 .like-icon-div{
-    background-color: var(--card-3-secondary-color);
-    
-}
-
-/* U4 image and heart-background*/
-.u4-img-div{
-    background-color: var(--card-4-secondary-color);
-}
-
-.u4-img-div img{
-    width: 50%;
-    transform: translateY(7.5%);
-}
-
-.card-4 .like-icon-div{
-    background-color: var(--card-4-secondary-color);
-}
-
-/* ======== text Container Styling general ======== */
-
-.text-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* background-color: yellow; */
-    padding: 0 1.5em;
-    padding-top: 7em;
-    padding-bottom: 1em;
-    box-sizing: border-box;
-}
-
-.text-container .item-name,
-.text-container .date{
-    margin: 0.25em 0;
-    text-align: center;
-}
-
-.text-container .item-name{
-    font-size: 1.2em;
-    font-weight: var(--title-font-weight);
-    color: var(--heading-color);
-}
-
-.text-container .date{
-    font-size: 0.9em;
-    font-weight: var(--date-font-weight);
-    color: var(--date-text-color);
-}
-
-/* === Pricing and cart div  ===== */
-.pricing-and-cart{
-    /* background-color: wheat; */
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0.25em 0 1em 0;
-}
-
-.pricing{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.previous-price{
-    font-size: 0.8rem;
-    font-weight: var(--pricing-font-weight);
-    color: var(--previous-price-text-color);
-    text-decoration: line-through;
-    /* background-color: whitesmoke; */
-    text-align: left;
-}
-
-.current-price{
-    color: var(--current-price-text-color);
-    font-size: 1.3rem;
-    font-weight: var(--pricing-font-weight);
-    /* background-color: yellow; */
-    margin: 0;
-}
-
-.pricing-and-cart{
-    width: 100%;
-}
-
-.fa-shopping-cart{
-    font-size: 1.3rem;
-    top: 0;
-    transform: translateY(50%);
-}
-
-
-/* ====== Hover effects ======= */
-.card-div:hover .img-div img{
-    transform: translateY(7.5%) scale(1.2);
-}
-
-.card-div:hover{
-    transform: translate(0, -10px);
-}
-
-.like-icon-div-child:hover .heart-fill{
-    opacity: 1;
-    transform: scale(1);
-}
-
-.like-icon-div-child:hover .heart-empty{
-    transition-delay: 0.25s;
-    opacity: 0;
-}
-
-#card-1-like:checked ~ .heart-empty,
-#card-2-like:checked ~ .heart-empty,
-#card-3-like:checked ~ .heart-empty,
-#card-4-like:checked ~ .heart-empty{ 
-        opacity: 0;
-}
-
-#card-1-like:checked ~ .heart-fill,
-#card-2-like:checked ~ .heart-fill,
-#card-3-like:checked ~ .heart-fill,
-#card-4-like:checked ~ .heart-fill{
-    animation: like-animation 0.25s ease-in-out forwards;
-}
-
-#card-1-like:not(:checked) ~ .heart-fill,
-#card-2-like:not(:checked) ~ .heart-fill,
-#card-3-like:not(:checked) ~ .heart-fill,
-#card-4-like:not(:checked) ~ .heart-fill{
-    animation: unlike-animation 0.25s ease-in-out ;
-}
-
-
-@keyframes like-animation{
-    0%{
-        opacity: 1;
-        transform: scale(1)
-    }
-    
-    50%{
-        opacity: 1;
-        color: var(--liked-heart-icon-color);
-        transform: scale(0.5);
-    }
-
-    100%{
-        opacity: 1;
-        color: var(--liked-heart-icon-color);
-        transform: scale(1.0);
-    }
-}
-
-@keyframes unlike-animation{
-    0%{
-        opacity: 1;
-        transform: scale(1)
-    }
-    
-    50%{
-        opacity: 1;
-        transform: scale(0.5);
-    }
-
-    100%{
-        opacity: 1;
-        color: var(--heart-icon-color);
-        transform: scale(1.0);
-    }
-}
-
-
-
-
-    </style>
-
-
 </head>
 <body class="hero-anime">	
 
-<div class="navigation-wrap bg-light start-header start-style">
+	<div class="navigation-wrap bg-light start-header start-style">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -420,10 +53,11 @@ a:hover {
 									<a class="nav-link dropdown-toggle"  href="ChatApp/index.php">Chat</a>
 									
 								</li>
-								
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="login1.php">Login</a>
+									<a class="nav-link dropdown-toggle"  href="index.php">Logout</a>
+									
 								</li>
+							
 							</ul>
 						</div>
                         <div class="wide">
@@ -494,74 +128,19 @@ a:hover {
 	
 
     <section id="quote">
-    <head>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
-
-<div class="col-lg-10 offset-lg-1 pt-5 pb-5 text-dark">
-  <div id="client-testimonial-carousel" class="carousel slide" data-ride="carousel" style="height:200px;">
-    <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active text-center p-4">
-        <blockquote class="blockquote text-center">
-          <p class="mb-0"><i class="fa fa-quote-left"></i> "Virtual reality is the first step in a grand adventure into the landscape of the imagination." 
-          </p>
-          <footer class="blockquote-footer">Franko Biocca <cite title="Source Title">genius</cite></footer>
-          <!-- Client review stars -->
-          <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-          <p class="client-review-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-            <i class="far fa-star"></i>
-          </p>
-        </blockquote>
-      </div>
-      <div class="carousel-item text-center p-4">
-        <blockquote class="blockquote text-center">
-          <p class="mb-0"><i class="fa fa-quote-left"></i> "Virtual reality will transport you to worlds you've only dreamed of." 
-          </p>
-          <footer class="blockquote-footer">Palmer Luckey <cite title="Source Title">genius</cite></footer>
-          <!-- Client review stars -->
-          <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-          <p class="client-review-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </p>
-        </blockquote>
-      </div>
-      <div class="carousel-item text-center p-4">
-        <blockquote class="blockquote text-center">
-          <p class="mb-0"><i class="fa fa-quote-left"></i> "Virtual reality is the ultimate empathy machine."
-          </p>
-          <footer class="blockquote-footer">Chris Milk <cite title="Source Title">genius</cite></footer>
-          <!-- Client review stars -->
-          <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
-          <p class="client-review-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </p>
-        </blockquote>
-      </div>
-    </div>
-    <ol class="carousel-indicators">
-      <li data-target="#client-testimonial-carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#client-testimonial-carousel" data-slide-to="1"></li>
-      <li data-target="#client-testimonial-carousel" data-slide-to="2"></li>
-    </ol>
-  </div>
-</div>
+        <div class="text-wrapper">
+            <h2>Experience Our Newest Vr set</h2>
+            <h1>Go Now</h1>
+        </div>
     </section>
 
 	<hr>
 
 <!----latest product---->
+
+
+
+<!-- shoop -->
 
 
 <section class="section-products">
@@ -612,12 +191,7 @@ a:hover {
 
 
 
-
-<!-- shoop -->
-
-
-
-<footer class="footer-section">
+  <footer class="footer-section">
         <div class="container">
             <div class="footer-cta pt-5 pb-5">
                 <div class="row">
@@ -626,7 +200,7 @@ a:hover {
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="cta-text">
                                 <h4>Find us</h4>
-                                <span>70000 Ferizaj</span>
+                                <span>1010 Avenue, sw 54321, chandigarh</span>
                             </div>
                         </div>
                     </div>
@@ -635,7 +209,7 @@ a:hover {
                             <i class="fas fa-phone"></i>
                             <div class="cta-text">
                                 <h4>Call us</h4>
-                                <span>+383 000 000 000</span>
+                                <span>9876543210 0</span>
                             </div>
                         </div>
                     </div>
@@ -644,7 +218,7 @@ a:hover {
                             <i class="far fa-envelope-open"></i>
                             <div class="cta-text">
                                 <h4>Mail us</h4>
-                                <span>vrfinity@info.com</span>
+                                <span>mail@info.com</span>
                             </div>
                         </div>
                     </div>
@@ -674,24 +248,26 @@ a:hover {
                                 <h3>Useful Links</h3>
                             </div>
                             <ul>
-                                <li><a href="index.php">Home</a></li>
-                                <li><a href="features.html">Services</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">about</a></li>
+                                <li><a href="#">services</a></li>
+                                <li><a href="#">portfolio</a></li>
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="about.html">About us</a></li>
+                                <li><a href="#">About us</a></li>
                                 <li><a href="#">Our Services</a></li>
                                 <li><a href="#">Expert Team</a></li>
                                 <li><a href="#">Contact us</a></li>
-                                
+                                <li><a href="#">Latest News</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
                         <div class="footer-widget">
                             <div class="footer-widget-heading">
-                                <h3>Contact</h3>
+                                <h3>Subscribe</h3>
                             </div>
                             <div class="footer-text mb-25">
-                                <p>Don’t forget to contact us for more information</p>
+                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
                             </div>
                             <div class="subscribe-form">
                                 <form action="#">
@@ -715,7 +291,7 @@ a:hover {
                     <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="index.php">Home</a></li>
+                                <li><a href="#">Home</a></li>
                                 <li><a href="#">Terms</a></li>
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Policy</a></li>
@@ -755,7 +331,7 @@ a:hover {
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="style.js"></script>
+    <script src="index2.js"></script>
 
 </body>
 </html> 

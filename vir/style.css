@@ -1,4 +1,7 @@
 
+
+
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
 
 /* #Primari
@@ -180,7 +183,7 @@ h1{
 	font-size: 48px;
 	line-height: 1.2;
 	font-weight: 700;
-	color: white;
+	color: #212112;
 	text-align: center;
 }
 p{
@@ -731,9 +734,11 @@ button {
 
 
 
-   /*latest version*/
+   /*Qoutessss*/
 
-
+   #client-testimonial-carousel {
+	min-height: 200px;
+}
 
 
 
@@ -907,168 +912,6 @@ h2::after {
 }
 
 
-.product-includes {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 50px; 
-    /* background-color: #fff;  */
-    max-width: 100%; 
-    margin: auto; 
-    gap: 20px; 
-}
-
-.product-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex: 1; 
-    min-width: 300px; 
-}
-h2 {
-    font-size: 2.5rem; /* Large font size for the heading */
-    margin-bottom: 20px; /* Space below the heading */
-    align-self: flex-start; /* Aligns the heading to the left */
-}
-
-.included-items {
-    list-style: none; /* Remove default list styling */
-    padding: 0;
-    margin: 0;
-    font-size: 1rem; /* Font size for list items */
-}
-
-/* ... other styles ... */
-
-.img-style {
-    flex: 1 1 50%; /* Allows the image container to grow but with a basis of 50% */
-    display: flex;
-    justify-content: flex-end; /* Aligns the image to the right */
-    align-items: center; /* Aligns the image vertically in the middle */
-    max-width: 700px; /* Maximum width of the image area */
-}
-
-.img-style img {
-    max-width: 100%; /* Ensures the image is responsive and does not overflow */
-    max-height: 500px; /* Example fixed height to make the image larger */
-    width: auto; /* Maintains the aspect ratio of the image */
-    height: auto;
-	border-top-left-radius: 300px;
-	border-top-right-radius: 300px;
-	border-bottom-right-radius:300px ;
-}
-
-.imgmoon {
-	width: 50%;
-	border-bottom-left-radius: 600px;
-	border-top-right-radius: 600px;
-}
- 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .product-includes {
-        padding: 20px;
-    }
-
-    .product-content,
-    .img-style {
-        flex-basis: 100%;
-        max-width: 100%;
-    }
-
-    .img-style {
-        justify-content: center; /* Center the image on smaller screens */
-    }
-
-    .img-style img {
-        max-height: none; /* Allows the image to scale naturally on smaller screens */
-    }
-    
-    /* ... other responsive adjustments ... */
-}
-
-.item-number {
-    font-weight: bold;
-    margin-right: 10px; 
-    background-color: #eaeaea; 
-    border-radius: 50%; 
-    width: 25px; 
-    height: 25px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-#feature11{
-    height: 573px;
-	background: linear-gradient(rgb(0,0,0,0.50),rgb(0,0,0,0.50)), url(img/liv.jpg);
-    background-position: center;
-    background-repeat: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-}
-#feature11 h1{
-    color: #fff;
-    
-}
-#feature11 p-1{
-    color: #fff;
-}
-
-.window13 {
-    height: 125vh;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    flex-flow: column;
-    margin-top: 0px;
-    position: relative;
-	margin-bottom: 0px;
-}
-
-
-
-.container2 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 20px;
-}
-.content2 {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-	max-width: 60%;
-	margin-bottom: 20px;
-}
-.content2 p {
-	margin: 0;
-	padding: 10px;
-	color: #000;
-	border-radius: 5px;
-	font-size: 1.7rem;
-}
-.image22 {
-	max-width: 40%;
-}
-@media (min-width: 768px) {
-	.container2 {
-		flex-direction: row;
-	}
-	.content2, .image22 {
-		flex: 1;
-	}
-	.content2 {
-		margin-right: 20px;
-		max-width: 90%;
-	}
-}
 
 
 

@@ -1,4 +1,7 @@
 
+
+
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
 
 /* #Primari
@@ -149,6 +152,41 @@ body{
     transition: all 200ms linear;
 }
 
+.tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    background: #0b798a;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tooltip::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #0b798a transparent;
+    transform: translateX(-50%);
+  }
+  
+  .tooltip-container:hover .tooltip {
+    top: 120%;
+    opacity: 1;
+    visibility: visible;
+    background: #0e94a0;
+    transform: translate(-50%, -5px);
+  }
+  
 /* #Primary style
 ================================================== */
 
@@ -180,7 +218,7 @@ h1{
 	font-size: 48px;
 	line-height: 1.2;
 	font-weight: 700;
-	color: white;
+	color: #212112;
 	text-align: center;
 }
 p{
@@ -744,331 +782,358 @@ button {
 
 
 
- h2 {
-	color: #000;
-	font-size: 26px;
-	font-weight: 300;
-	text-align: center;
-	text-transform: uppercase;
-	position: relative;
-	margin: 30px 0 60px;
-    margin-top: 60px;
+.section-products a,
+a:hover {
+    text-decoration: none;
+    color: inherit;
 }
-h2::after {
-	content: "";
-	width: 100px;
-	position: absolute;
-	margin: 0 auto;
-	height: 4px;
-	border-radius: 1px;
-	background: rgb(119, 119, 245);
-	left: 0;
-	right: 0;
-	bottom: -20px;
-    margin-top: 60px;
-} 
-.carousel {
-	margin: 50px auto;
-	padding: 0 70px;
- margin-top: 150px;
+
+.section-products {
+    padding: 80px 0 54px;
 }
-.carousel .item {
-	color: #747d89;
-	min-height: 325px;
-	text-align: center;
-	overflow: hidden;
+
+.section-products .header {
+    margin-bottom: 50px;
 }
-.carousel .thumb-wrapper {
-	border: 2px solid white;
-	padding: 25px 15px;
-	background: transparent;
-	border-radius: 6px;
-	text-align: center;
-	position: relative;
-	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+
+.section-products .header h3 {
+    font-size: 1rem;
+    color: #fe302f;
+    font-weight: 500;
 }
-.carousel .item .img-box {
-	height: 120px;
-	margin-bottom: 20px;
-	width: 100%;
-	position: relative;
+
+.section-products .header h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #444444; 
 }
-.carousel .item img {	
-	max-width: 100%;
-	max-height: 100%;
-	display: inline-block;
-	position: absolute;
-	bottom: 0;
-	margin: 0 auto;
-	left: 0;
-	right: 0;
-}
-.carousel .item h4 {
-	font-size: 18px;
-}
-.carousel .item h4, .carousel .item p, .carousel .item ul {
-	margin-bottom: 5px;
-}
-.carousel .thumb-content .btn {
-	color: rgb(119, 119, 245);
-	font-size: 11px;
-	text-transform: uppercase;
-	font-weight: bold;
-	background: none;
-	border: 1px solid rgb(119, 119, 245);
-	padding: 6px 10px;
-	margin-top: 5px;
-	line-height: 16px;
-	border-radius: 20px;
-}
-.carousel .thumb-content .btn:hover, .carousel .thumb-content .btn:focus {
-	color: #fff;
-	background: rgb(119, 119, 245);
-	box-shadow: none;
-}
-.carousel .thumb-content .btn i {
-	font-size: 14px;
-	font-weight: bold;
-	margin-left: 5px;
-}
-.carousel .item-price {
-	font-size: 13px;
-	padding: 2px 0;
-}
-.carousel .item-price strike {
-	opacity: 0.7;
-	margin-right: 5px;
-}
-.carousel-control-prev, .carousel-control-next {
-	height: 44px;
-	width: 40px;
-	background: rgb(119, 119, 245);	
-	margin: auto 0;
-	border-radius: 4px;
-	opacity: 0.8;
-}
-.carousel-control-prev:hover, .carousel-control-next:hover {
-	background: rgb(119, 119, 245);
-	opacity: 1;
-}
-.carousel-control-prev i, .carousel-control-next i {
-	font-size: 36px;
-	position: absolute;
-	top: 50%;
-	display: inline-block;
-	margin: -19px 0 0 0;
-	z-index: 5;
-	left: 0;
-	right: 0;
-	color: #fff;
-	text-shadow: none;
-	font-weight: bold;
-}
-.carousel-control-prev i {
-	margin-left: -2px;
-}
-.carousel-control-next i {
-	margin-right: -4px;
-}		
-.carousel-indicators {
-	bottom: -50px;
-}
-.carousel-indicators li, .carousel-indicators li.active {
-	width: 10px;
-	height: 10px;
-	margin: 4px;
-	border-radius: 50%;
-	border: none;
-}
-.carousel-indicators li {	
-	background: rgba(0, 0, 0, 0.2);
-}
-.carousel-indicators li.active {	
-	background: rgba(0, 0, 0, 0.6);
-}
-.carousel .wish-icon {
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	z-index: 99;
-	cursor: pointer;
-	font-size: 16px;
-	color: #abb0b8;
-}
-.carousel .wish-icon .fa-heart {
-	color: #ff6161;
-}
-.star-rating li {
-	padding: 0;
-}
-.star-rating i {
-	font-size: 14px;
-	color: #ffc000;
+
+:root{
+    font-size: 16px;
+    font-family: "Raleway";
+    --heading-color: hsl(0, 0%, 7%);
+    --date-text-color: hsl(0, 0%, 51%);
+    --previous-price-text-color: hsl(0, 98%, 44%);
+    --current-price-text-color: hsla(0, 0%, 0%, 0.822);
+    --liked-heart-icon-color: hsl(0, 98%, 44%);
+    --heart-icon-color: whitesmoke;
+    --pricing-font-weight: 800;
+    --title-font-weight: 800;
+    --date-font-weight: 550;
+
+    /* Cards colors */
+    --card-main-color : whitesmoke;
+    --card-1-secondary-color: rgb(26, 13, 13);
+    --card-2-secondary-color: rgb(67,53,27);
+    --card-3-secondary-color: rgb(178,180,179);
+    --card-4-secondary-color: rgb(96,109,117);
 }
 
 
-.product-includes {
+.section-products .container input{
+    display: none;
+}
+
+.section-products .container{
+    max-width: 100em;
+    /* background-color: lightgreen; */
     display: flex;
     flex-wrap: wrap;
-    padding: 50px; 
-    /* background-color: #fff;  */
-    max-width: 100%; 
-    margin: auto; 
-    gap: 20px; 
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-start;
+    margin: auto;
+    min-height: 30em;
+    padding: 3em 1em 1em 1em;
+    box-sizing: border-box;
 }
 
-.product-content {
+/* Card Styling */
+.card-div{
+    width: 20em;
+    min-height: 20em;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex: 1; 
-    min-width: 300px; 
-}
-h2 {
-    font-size: 2.5rem; /* Large font size for the heading */
-    margin-bottom: 20px; /* Space below the heading */
-    align-self: flex-start; /* Aligns the heading to the left */
-}
-
-.included-items {
-    list-style: none; /* Remove default list styling */
-    padding: 0;
-    margin: 0;
-    font-size: 1rem; /* Font size for list items */
-}
-
-/* ... other styles ... */
-
-.img-style {
-    flex: 1 1 50%; /* Allows the image container to grow but with a basis of 50% */
-    display: flex;
-    justify-content: flex-end; /* Aligns the image to the right */
-    align-items: center; /* Aligns the image vertically in the middle */
-    max-width: 700px; /* Maximum width of the image area */
-}
-
-.img-style img {
-    max-width: 100%; /* Ensures the image is responsive and does not overflow */
-    max-height: 500px; /* Example fixed height to make the image larger */
-    width: auto; /* Maintains the aspect ratio of the image */
-    height: auto;
-	border-top-left-radius: 300px;
-	border-top-right-radius: 300px;
-	border-bottom-right-radius:300px ;
-}
-
-.imgmoon {
-	width: 50%;
-	border-bottom-left-radius: 600px;
-	border-top-right-radius: 600px;
-}
- 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .product-includes {
-        padding: 20px;
-    }
-
-    .product-content,
-    .img-style {
-        flex-basis: 100%;
-        max-width: 100%;
-    }
-
-    .img-style {
-        justify-content: center; /* Center the image on smaller screens */
-    }
-
-    .img-style img {
-        max-height: none; /* Allows the image to scale naturally on smaller screens */
-    }
-    
-    /* ... other responsive adjustments ... */
-}
-
-.item-number {
-    font-weight: bold;
-    margin-right: 10px; 
-    background-color: #eaeaea; 
-    border-radius: 50%; 
-    width: 25px; 
-    height: 25px; 
-    display: flex;
+    justify-items: center;
     align-items: center;
-    justify-content: center;
+    background-color: var(--card-main-color);
+    margin: 0.6em;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: transform 0.2s ease-in-out;
 }
 
-
-
-#feature11{
-    height: 573px;
-	background: linear-gradient(rgb(0,0,0,0.50),rgb(0,0,0,0.50)), url(img/liv.jpg);
-    background-position: center;
-    background-repeat: cover;
+/* ======== General styling of all cards and heart divs ========== */
+.img-div{
+    width: 100%;
+    height: 8em;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
-}
-#feature11 h1{
-    color: #fff;
-    
-}
-#feature11 p-1{
-    color: #fff;
+    padding-top: 1rem;
+    z-index: 1;
+    border-radius: 0 0 10px 10px;
 }
 
-.window13 {
-    height: 125vh;
+.img-div img{
+    transform-origin: bottom;
+    transform: translateY(7.5%);
+    transition: transform 0.3s ease-in-out
+}
+
+/* === Styling the like Icon ==== */
+.like-icon-div{
+    padding: 1em 1em 0 1em;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+    font-size: 1.5em;
+    color: var(--heart-icon-color);
+    border-radius:10px 10px 0 0;
     display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    flex-flow: column;
-    margin-top: 0px;
+    justify-content: flex-end;
+}
+
+.like-icon-div-child{
+    /* background-color: yellow; */
+    width: 1em;
+    height: 1em;
     position: relative;
-	margin-bottom: 0px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.heart-empty{
+    position: absolute;
+    left: 0;
+    opacity: 1;
+}
+
+.heart-fill{
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.25s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 
+/* God of war image and heart-background*/
+.gow-img-div{
+    background-color: var(--card-1-secondary-color);
+}
 
-.container2 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 20px;
+.gow-img-div img{
+    width: 65%;
+    transform: translateY(7.5%);
+    /* background-color: whitesmoke; */
 }
-.content2 {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-	max-width: 60%;
-	margin-bottom: 20px;
+
+.card-1 .like-icon-div{
+    background-color: var(--card-1-secondary-color);
 }
-.content2 p {
-	margin: 0;
-	padding: 10px;
-	color: #000;
-	border-radius: 5px;
-	font-size: 1.7rem;
+
+
+/* Sekiro image and heart-background */
+.sekiro-img-div{
+    background-color: var(--card-2-secondary-color);
 }
-.image22 {
-	max-width: 40%;
+
+.sekiro-img-div img{
+    width: 45%;
+    transform: translateY(7.5%);
 }
-@media (min-width: 768px) {
-	.container2 {
-		flex-direction: row;
-	}
-	.content2, .image22 {
-		flex: 1;
-	}
-	.content2 {
-		margin-right: 20px;
-		max-width: 90%;
-	}
+
+.card-2 .like-icon-div{
+    background-color: var(--card-2-secondary-color);
 }
+
+
+/* Dazai image and heart-background */
+.dazai-img-div{
+    background-color: var(--card-3-secondary-color);
+}
+
+.dazai-img-div img{
+    width: 80%;
+    transform: translateY(7.5%);
+}
+
+.card-3 .like-icon-div{
+    background-color: var(--card-3-secondary-color);
+    
+}
+
+/* U4 image and heart-background*/
+.u4-img-div{
+    background-color: var(--card-4-secondary-color);
+}
+
+.u4-img-div img{
+    width: 50%;
+    transform: translateY(7.5%);
+}
+
+.card-4 .like-icon-div{
+    background-color: var(--card-4-secondary-color);
+}
+
+/* ======== text Container Styling general ======== */
+
+.text-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+    padding: 0 1.5em;
+    padding-top: 7em;
+    padding-bottom: 1em;
+    box-sizing: border-box;
+}
+
+.text-container .item-name,
+.text-container .date{
+    margin: 0.25em 0;
+    text-align: center;
+}
+
+.text-container .item-name{
+    font-size: 1.2em;
+    font-weight: var(--title-font-weight);
+    color: var(--heading-color);
+}
+
+.text-container .date{
+    font-size: 0.9em;
+    font-weight: var(--date-font-weight);
+    color: var(--date-text-color);
+}
+
+/* === Pricing and cart div  ===== */
+.pricing-and-cart{
+    /* background-color: wheat; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.25em 0 1em 0;
+}
+
+.pricing{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.previous-price{
+    font-size: 0.8rem;
+    font-weight: var(--pricing-font-weight);
+    color: var(--previous-price-text-color);
+    text-decoration: line-through;
+    /* background-color: whitesmoke; */
+    text-align: left;
+}
+
+.current-price{
+    color: var(--current-price-text-color);
+    font-size: 1.3rem;
+    font-weight: var(--pricing-font-weight);
+    /* background-color: yellow; */
+    margin: 0;
+}
+
+.pricing-and-cart{
+    width: 100%;
+}
+
+.fa-shopping-cart{
+    font-size: 1.3rem;
+    top: 0;
+    transform: translateY(50%);
+}
+
+
+/* ====== Hover effects ======= */
+.card-div:hover .img-div img{
+    transform: translateY(7.5%) scale(1.2);
+}
+
+.card-div:hover{
+    transform: translate(0, -10px);
+}
+
+.like-icon-div-child:hover .heart-fill{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.like-icon-div-child:hover .heart-empty{
+    transition-delay: 0.25s;
+    opacity: 0;
+}
+
+#card-1-like:checked ~ .heart-empty,
+#card-2-like:checked ~ .heart-empty,
+#card-3-like:checked ~ .heart-empty,
+#card-4-like:checked ~ .heart-empty{ 
+        opacity: 0;
+}
+
+#card-1-like:checked ~ .heart-fill,
+#card-2-like:checked ~ .heart-fill,
+#card-3-like:checked ~ .heart-fill,
+#card-4-like:checked ~ .heart-fill{
+    animation: like-animation 0.25s ease-in-out forwards;
+}
+
+#card-1-like:not(:checked) ~ .heart-fill,
+#card-2-like:not(:checked) ~ .heart-fill,
+#card-3-like:not(:checked) ~ .heart-fill,
+#card-4-like:not(:checked) ~ .heart-fill{
+    animation: unlike-animation 0.25s ease-in-out ;
+}
+
+
+@keyframes like-animation{
+    0%{
+        opacity: 1;
+        transform: scale(1)
+    }
+    
+    50%{
+        opacity: 1;
+        color: var(--liked-heart-icon-color);
+        transform: scale(0.5);
+    }
+
+    100%{
+        opacity: 1;
+        color: var(--liked-heart-icon-color);
+        transform: scale(1.0);
+    }
+}
+
+@keyframes unlike-animation{
+    0%{
+        opacity: 1;
+        transform: scale(1)
+    }
+    
+    50%{
+        opacity: 1;
+        transform: scale(0.5);
+    }
+
+    100%{
+        opacity: 1;
+        color: var(--heart-icon-color);
+        transform: scale(1.0);
+    }
+}
+
+
 
 
 

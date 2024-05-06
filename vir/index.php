@@ -389,7 +389,7 @@ a:hover {
 </head>
 <body class="hero-anime">	
 
-<div class="navigation-wrap bg-light start-header start-style">
+	<div class="navigation-wrap bg-light start-header start-style">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -416,10 +416,12 @@ a:hover {
 									<a class="nav-link dropdown-toggle"  href="game.html" >Try</a>
 									
 								</li>
-								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link dropdown-toggle"  href="ChatApp/index.php">Chat</a>
+								
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link dropdown-toggle"  href="game.html" >Try</a>
 									
 								</li>
+								
 								
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 									<a class="nav-link" href="login1.php">Login</a>
