@@ -466,7 +466,7 @@ a:hover {
 		</div>
 	</div>
 	<div class="my-5 py-5">
-	</div>S
+	</div>
 
     <!-- sekshion -->
     <!-------Seksioni About------->
