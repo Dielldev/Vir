@@ -481,7 +481,7 @@ a:hover {
             <div class="border1">
             <P class="para">500+</P><br>
             <p class="para1">immersive experiences</p><br><br>
-            <p class="para2">Try Vr through differnt experiences and have fun while you exlore it!</p><br><br>
+            <p class="para2">Try Vr through differnt experiences and have fun while you explore it!</p><br><br>
             <button class="learn-more">
                 <span class="circle" aria-hidden="true">
                 <span class="icon arrow"></span>
