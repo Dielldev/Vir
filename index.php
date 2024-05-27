@@ -471,7 +471,7 @@ a:hover {
     <!-- sekshion -->
     <!-------Seksioni About------->
     <section id="about">
-        <h1 class="h1"> <br> way of reality</h1>
+        <h1 class="h1">Try a new <br> way of reality</h1>
         <p class="p">Our newes models is different from others, other people can see what you see something out of the ordinary</p>
        </section>
 
