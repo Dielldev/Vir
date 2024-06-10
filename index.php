@@ -456,7 +456,7 @@ a:hover {
 						<div class="fix1">
 
                             <h1>THe future of Virtual reality</h1>
-                            <p>There is something you have never seen before</p>	
+                            <p>There is something you have </p>	
                             </div>		 
 					</div>		
 				</div>		
