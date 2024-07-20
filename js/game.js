@@ -40,7 +40,7 @@
 		}
 		else {
 			$("body").addClass("dark");
-			
+			$("#switch").addClass("switched");
 		}
 	});  
 	
